@@ -197,3 +197,14 @@ label {
   margin-top: 16px;
   padding-bottom: 24px;
 }
+
+.password {
+  position: relative;
+}
+
+.password-toggler {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 35%;
+}

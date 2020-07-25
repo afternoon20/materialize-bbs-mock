@@ -203,3 +203,15 @@ nav .brand-logo {
   margin-top: 16px;
   padding-bottom: 24px;
 }
+
+// パスワード非表示
+.password {
+  position: relative;
+}
+
+.password-toggler {
+  cursor: pointer;
+  position: absolute;
+  top: 35%;
+  right: 0;
+}

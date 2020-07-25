@@ -41,8 +41,12 @@
           <form action="#" method="post">
             <label>ログインID</label>
             <input type="text" name="login_id" />
-            <label>パスワード</label>
-            <input type="text" name="password" />
+            <label class="password">
+              パスワード
+              <input type="password" name="password" />
+              <span class="password-toggler"><i class="material-icons left">visibility</i></span>
+            </label>
+
             <div class="center form__btn">
               <input class="btn" type="submit" value="ログイン" />
             </div>
