@@ -6,7 +6,6 @@
 
 body {
   color: $font-color;
-  padding-bottom: 48px;
 }
 
 header {
@@ -92,6 +91,23 @@ nav .brand-logo {
 .modal-txt {
   color: $font-color;
   line-height: 1.4;
+}
+
+.breadcrumbs {
+  position: relative;
+  padding-left: 26px;
+
+  .icon {
+    position: absolute;
+    top: -5px;
+    left: 0;
+  }
+}
+
+// フッター
+footer {
+  margin-top: 32px;
+  padding: 8px 0;
 }
 
 // 投稿一覧

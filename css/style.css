@@ -1,6 +1,5 @@
 body {
   color: #263238;
-  padding-bottom: 48px;
 }
 
 header {
@@ -83,6 +82,22 @@ label {
 .modal-txt {
   color: #263238;
   line-height: 1.4;
+}
+
+.breadcrumbs {
+  padding-left: 26px;
+  position: relative;
+}
+
+.breadcrumbs .icon {
+  left: 0;
+  position: absolute;
+  top: -5px;
+}
+
+footer {
+  margin-top: 32px;
+  padding: 8px 0;
 }
 
 .entry-list {
