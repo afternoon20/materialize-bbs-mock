@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>タイトル | Materialize-bbs</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-wrapper teal lighten-3">
+          <div class="container">
+            <a href="index.html" class="header-ttl brand-logo">Materialize-bbs</a>
+            <ul class="right hide-on-med-and-down">
+              <li class="header-txt">こんにちは、田中太郎さん</li>
+              <li><a href="index.html" class="white-text waves-effect waves-light btn-flat">ログアウト</a></li>
+              <li><a class="white-text waves-effect waves-light btn-flat modal-trigger" href="#modal">退会する</a></li>
+              <!-- ポップアップ表示 -->
+              <div id="modal" class="modal">
+                <div class="modal-content post-modal">
+                  <h3 class="modal-txt">本当に退会しますか？</h3>
+                  <p class="modal-txt">一度退会すると、復元はできません。<br />掲示板の作成、編集、削除ができなくなります。</p>
+                </div>
+                <div class="modal-footer">
+                  <form action="../deleteForm.html" method="post">
+                    <!-- <input type="hidden" name="post_id" value="<?php echo $entry[post_id];?>" /> -->
+                    <input class="btn blue" type="submit" value="削除する" />
+                  </form>
+                </div>
+              </div>
+            </ul>
+            <!-- ドロップダウンリスト -->
+            <a class="dropdown-trigger right" href="#" data-target="dropdown"><i class="material-icons">apps</i></a>
+            <ul id="dropdown" class="dropdown-content">
+              <li>
+                <div class="center dropdown-txt">
+                  <i class="material-icons tiny">person</i>
+                  田中太郎
+                </div>
+              </li>
+              <li class="divider" tabindex="-1"></li>
+              <li><a href="logoutForm.html">ログアウト</a></li>
+              <li><a class="grey-text lighten-1 modal-trigger" href="#modal-mb">退会する</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- スマホ表示のモーダルウィンドウ -->
+      <div id="modal-mb" class="modal">
+        <div class="modal-content post-modal">
+          <h3 class="modal-txt">本当に退会しますか？</h3>
+          <p class="modal-txt">一度退会すると、復元はできません。<br />掲示板の作成、編集、削除ができなくなります。</p>
+        </div>
+        <div class="modal-footer">
+          <form action="../deleteForm.html" method="post">
+            <input type="hidden" name="post_id" value="<?php echo $entry[post_id];?>" />
+            <input class="btn blue" type="submit" value="削除する" />
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="post__btn">
+        <a href="edit.html" class="waves-effect waves-light btn blue">編集する</a>
+        <a class="waves-effect waves-light btn grey lighten-1 modal-trigger" href="#modal-del">削除</a>
+      </div>
+      <main>
+        <div class="entry">
+          <header class="entry-header entry-header--post">
+            <h3 class="entry-ttl">吾輩は猫である</h3>
+            <div class="entry-date">
+              投稿日：
+              <time>2020.7.10</time>
+            </div>
+          </header>
+          <div class="entry-body">
+            吾輩は猫である。名前はまだ無い。 どこで生れたか頓と見當がつかぬ。何でも薄暗いじめじめした所でニヤーニヤー泣いて居た事丈は記憶して居る。
+            吾輩はこゝで始めて人間といふものを見た。然もあとで聞くとそれは書生といふ人間中で一番獰悪な種族であつたさうだ。
+            此書生といふのは時々我々を捕へて煮て食ふといふ話である。然し其當時は何といふ考もなかつたから別段恐しいとも思はなかつた。
+          </div>
+
+          <div class="comment-wrapper">
+            <form action="../commentForm.php" method="post">
+              <label>
+                コメント
+                <textarea name="body" class="materialize-textarea" cols="30" rows="10"></textarea>
+              </label>
+              <!-- <input type="hidden" name="post_id" value="<?php echo $entry[post_id];?>" /> -->
+              <!-- <input type="hidden" name="url" value= "<?php echo $_SERVER["REQUEST_URI"]; ?>" > -->
+              <div class="center form__btn">
+                <input class="btn" type="submit" value="コメントする" />
+              </div>
+            </form>
+
+            <!-- コメント一覧 -->
+            <div class="comment-list">
+              <div class="comment">
+                <div class="comment-header">
+                  <span class="comment__num">1</span>
+                  <span class="comment__name">名無し</span>
+                  <div class="comment__date">
+                    投稿日：
+                    <time>2020.7.15</time>
+                  </div>
+                </div>
+                <div class="comment-body">
+                  ここにコメントを書きます。
+                </div>
+              </div>
+              <div class="comment">
+                <div class="comment-header">
+                  <span class="comment__num">2</span>
+                  <span class="comment__name">田中太郎</span>
+                  <div class="comment__date">
+                    投稿日：
+                    <time>2020.7.24</time>
+                  </div>
+                </div>
+                <div class="comment-body">
+                  三毛猫がいいなあ。
+                </div>
+              </div>
+              <div class="comment">
+                <div class="comment-header">
+                  <span class="comment__num">3</span>
+                  <span class="comment__name">名無し</span>
+                  <div class="comment__date">
+                    投稿日：
+                    <time>2020.7.15</time>
+                  </div>
+                </div>
+                <div class="comment-body">
+                  ここにコメントを書きます。
+                </div>
+              </div>
+              <div class="comment">
+                <div class="comment-header">
+                  <span class="comment__num">4</span>
+                  <span class="comment__name">名無し</span>
+                  <div class="comment__date">
+                    投稿日：
+                    <time>2020.7.15</time>
+                  </div>
+                </div>
+                <div class="comment-body">
+                  ここにコメントを書きます。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- ポップアップ表示 -->
+    <div id="modal-del" class="modal">
+      <div class="modal-content post-modal">
+        <h3>本当に削除しますか？</h3>
+        <p>一度削除すると、復元はできません。<br />コメントも削除されます。</p>
+      </div>
+      <div class="modal-footer">
+        <form action="#" method="post">
+          <!-- <input type="hidden" name="post_id" value="<?php echo $entry[post_id];?>" /> -->
+          <input class="btn blue" type="submit" value="削除する" />
+        </form>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
