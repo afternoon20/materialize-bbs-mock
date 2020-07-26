@@ -25,6 +25,18 @@ input {
   }
 }
 
+.container--error {
+  background: url(../img/bg-cat.jpeg) right no-repeat;
+  background-size: contain;
+  height: 720px;
+  margin-bottom: 80px;
+  margin-top: 128px;
+}
+
+.container--error a {
+  font-size: 3.2rem;
+}
+
 .pagination .active {
   background-color: #26a69a !important;
 }
